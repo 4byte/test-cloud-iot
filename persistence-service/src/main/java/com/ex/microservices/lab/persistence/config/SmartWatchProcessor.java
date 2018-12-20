@@ -7,13 +7,12 @@ import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.messaging.SubscribableChannel;
 
 @EnableBinding
-public interface SmartWatchProcessor extends Processor {
-	String INPUT = "input";
+public interface SmartWatchProcessor{
 	String WORDS = "words";
 
-	@Input(SmartWatchProcessor.WORDS)
+	@Input("words")
 	SubscribableChannel input();
-
-	@Input(SmartWatchProcessor.INPUT)
-	SubscribableChannel myInput();
+//
+//	@Input(Sink.INPUT)
+//	SubscribableChannel myInput();
 }

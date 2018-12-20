@@ -12,7 +12,7 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
 
 @Service
-@EnableBinding(Sink.class)
+@EnableBinding(SmartWatchProcessor.class)
 public class SmartWatchService implements ApplicationListener<ContextRefreshedEvent> {
 	@Autowired
 	private Sink sink;
@@ -28,7 +28,7 @@ public class SmartWatchService implements ApplicationListener<ContextRefreshedEv
 //		sink.input().subscribe(message -> smartWatchRepository.save(((SmartWatchDTO) message.getPayload()).toSmartWatch()));
 	}
 
-	@StreamListener(SmartWatchProcessor.INPUT)
+	@StreamListener(SmartWatchProcessor.WORDS)
 	public void listen(SmartWatchDTO smartWatchDTO){
 		System.out.println(smartWatchDTO);
 	}
