@@ -28,7 +28,7 @@ public class SmartWatchService implements ApplicationListener<ContextRefreshedEv
 //		sink.input().subscribe(message -> smartWatchRepository.save(((SmartWatchDTO) message.getPayload()).toSmartWatch()));
 	}
 
-	@StreamListener(SmartWatchProcessor.WORDS)
+	@StreamListener(SmartWatchProcessor.SMART_WATCH)
 	public void listen(SmartWatchDTO smartWatchDTO){
 		System.out.println(smartWatchDTO);
 	}
