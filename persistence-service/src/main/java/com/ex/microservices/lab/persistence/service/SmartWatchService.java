@@ -6,16 +6,12 @@ import com.ex.microservices.lab.persistence.repository.SmartWatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
 
 @Service
 @EnableBinding(SmartWatchProcessor.class)
-public class SmartWatchService implements ApplicationListener<ContextRefreshedEvent> {
-	@Autowired
-	private Sink sink;
+public class SmartWatchService{
+
 	@Autowired
 	private SmartWatchRepository smartWatchRepository;
 
@@ -23,10 +19,6 @@ public class SmartWatchService implements ApplicationListener<ContextRefreshedEv
 //	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
 //		sink.input().subscribe(message -> smartWatchRepository.save(((SmartWatchDTO) message.getPayload()).toSmartWatch()));
 //	}
- 	@Override
-	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//		sink.input().subscribe(message -> smartWatchRepository.save(((SmartWatchDTO) message.getPayload()).toSmartWatch()));
-	}
 
 	@StreamListener(SmartWatchProcessor.SMART_WATCH)
 	public void listen(SmartWatchDTO smartWatchDTO){
