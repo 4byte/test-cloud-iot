@@ -5,10 +5,9 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
 @EnableBinding
-public interface SmartWatchProcessor{
+public interface CarDataProcessor {
+	String CAR_DATA = "car_data";
 
-	String SMART_WATCH = "smart_watch";
-
-	@Input(SmartWatchProcessor.SMART_WATCH)
-	SubscribableChannel inputSmartWatch();
+	@Input(CarDataProcessor.CAR_DATA)
+	SubscribableChannel inputCarData();
 }
