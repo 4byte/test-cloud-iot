@@ -8,12 +8,12 @@ import java.util.Objects;
 
 @Data
 public class HouseDataDTO {
-	public Double thermostatTemp;
-	public Double mainRoomTemp;
-	public Double bedroomTemp;
-	public Double fridgeTemp;
-	public Long date;
-	public String userUUID;
+	private Double thermostatTemp;
+	private Double mainRoomTemp;
+	private Double bedroomTemp;
+	private Double fridgeTemp;
+	private Long date;
+	private String userUUID;
 	@JsonIgnore
 	public HouseData toHouseData() {
 		return new HouseData(null, thermostatTemp, mainRoomTemp, bedroomTemp, fridgeTemp, date, userUUID);

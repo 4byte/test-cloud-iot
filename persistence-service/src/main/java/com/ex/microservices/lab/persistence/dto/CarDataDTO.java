@@ -8,11 +8,11 @@ import java.util.Objects;
 
 @Data
 public class CarDataDTO {
-	public Double rpm;
-	public Double speed;
-	public Double fuelLeft;
-	public Long date;
-	public String userUUID;
+	private Double rpm;
+	private Double speed;
+	private Double fuelLeft;
+	private Long date;
+	private String userUUID;
 	@JsonIgnore
 	public CarData toCarData() {
 		return new CarData(null, rpm, speed, fuelLeft, date, userUUID);

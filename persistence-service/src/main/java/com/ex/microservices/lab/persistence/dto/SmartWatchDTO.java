@@ -8,10 +8,10 @@ import java.util.Objects;
 
 @Data
 public class SmartWatchDTO {
-	public Double heartRate;
-	public Double chargeLeft;
-	public Long date;
-	public String userUUID;
+	private Double heartRate;
+	private Double chargeLeft;
+	private Long date;
+	private String userUUID;
 	@JsonIgnore
 	public SmartWatch toSmartWatch() {
 		return new SmartWatch(null, heartRate, chargeLeft, date, userUUID);
