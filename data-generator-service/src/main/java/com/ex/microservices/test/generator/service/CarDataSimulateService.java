@@ -1,8 +1,6 @@
 package com.ex.microservices.test.generator.service;
 
 import com.ex.microservices.test.generator.dto.CarDataDTO;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,28 +8,24 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.Future;
 
 @Service
-public class CarDataSimulateService implements ApplicationListener<ContextRefreshedEvent>{
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-		generateCarDataAndSleep(1000);
-	}
+public class CarDataSimulateService {
 
-	@Async
-	public void generateCarDataAndSleep(long sleepMillis){
+	public Future<Object> generateCarDataAndSleep() {
 		RestTemplate template = new RestTemplate();
 		Random random = new Random();
-		while (true){
-			template.postForLocation(URI.create("http://localhost:8083/car"),new CarDataDTO(
+		while (true) {
+			template.postForLocation(URI.create("http://localhost:8083/car"), new CarDataDTO(
 					random.nextDouble(),
 					random.nextDouble(),
 					random.nextDouble(),
-					Math.abs((long) random.nextInt(1000) * 100000),
+					Math.abs(((long) random.nextInt(100000000)) * 100),
 					UUID.randomUUID().toString()
-					));
+			));
 			try {
-				Thread.sleep(sleepMillis);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

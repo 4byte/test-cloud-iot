@@ -1,8 +1,6 @@
 package com.ex.microservices.test.generator.service;
 
 import com.ex.microservices.test.generator.dto.HouseDataDTO;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,16 +8,12 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.Future;
 
 @Service
-public class HouseDataSimulateService implements ApplicationListener<ContextRefreshedEvent> {
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-		generateHouseDataAndSleep(1000);
-	}
+public class HouseDataSimulateService {
 
-	@Async
-	public void generateHouseDataAndSleep(long sleepMillis) {
+	public Future<Object> generateHouseDataAndSleep() {
 		RestTemplate template = new RestTemplate();
 		Random random = new Random();
 		while (true) {
@@ -28,11 +22,11 @@ public class HouseDataSimulateService implements ApplicationListener<ContextRefr
 					random.nextDouble() * 100,
 					random.nextDouble() * 100,
 					random.nextDouble() * 10,
-					Math.abs((long) random.nextInt(1000) * 100000),
+					Math.abs(((long) random.nextInt(100000000)) * 100),
 					UUID.randomUUID().toString()
 			));
 			try {
-				Thread.sleep(sleepMillis);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

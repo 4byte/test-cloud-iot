@@ -1,8 +1,6 @@
 package com.ex.microservices.test.generator.service;
 
 import com.ex.microservices.test.generator.dto.SmartWatchDTO;
-import org.springframework.context.ApplicationListener;
-import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -10,27 +8,23 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URI;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.Future;
 
 @Service
-public class WatchDataSimulateService implements ApplicationListener<ContextRefreshedEvent> {
-	@Override
-	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-		generateWatchDataAndSleep(1000);
-	}
+public class WatchDataSimulateService {
 
-	@Async
-	public void generateWatchDataAndSleep(long sleepMillis) {
+	public Future<Object> generateWatchDataAndSleep() {
 		RestTemplate template = new RestTemplate();
 		Random random = new Random();
 		while (true) {
 			template.postForLocation(URI.create("http://localhost:8083/watch"), new SmartWatchDTO(
 					random.nextDouble() * 200,
 					random.nextDouble(),
-					Math.abs((long) random.nextInt(1000) * 100000),
+					Math.abs(((long) random.nextInt(100000000)) * 100),
 					UUID.randomUUID().toString()
 			));
 			try {
-				Thread.sleep(sleepMillis);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

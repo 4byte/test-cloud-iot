@@ -1,8 +1,10 @@
 package com.ex.microservices.lab.persistence.config;
 
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.SubscribableChannel;
 
+@EnableBinding
 public interface HouseDataProcessor {
 
 	String HOUSE_DATA = "house_data";
