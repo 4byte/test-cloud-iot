@@ -24,7 +24,7 @@ public class WatchDataController {
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity insertWatch(@RequestBody SmartWatchDTO smartWatchDTO){
-		watchDataQueueService.publishHouse(smartWatchDTO);
+		watchDataQueueService.publishWatch(smartWatchDTO);
 		return new ResponseEntity(HttpStatus.OK);
 	}
 }

@@ -1,8 +1,6 @@
 package com.ex.microservices.lab.apigateway.service;
 
-import com.ex.microservices.lab.apigateway.config.HouseDataSource;
 import com.ex.microservices.lab.apigateway.config.SmartWatchSource;
-import com.ex.microservices.lab.apigateway.dto.HouseDataDTO;
 import com.ex.microservices.lab.apigateway.dto.SmartWatchDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -17,7 +15,7 @@ public class WatchDataQueueService {
 	private SmartWatchSource source;
 
 	@SendTo(SmartWatchSource.OUTPUT)
-	public void publishHouse(SmartWatchDTO smartWatchDTO){
+	public void publishWatch(SmartWatchDTO smartWatchDTO){
 		source.output().send(new GenericMessage<>(smartWatchDTO));
 	}
 }
