@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.apigateway.config;
+package com.ex.microservices.test.apigateway.config;
 
 import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;

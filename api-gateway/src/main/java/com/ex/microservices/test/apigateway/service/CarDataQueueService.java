@@ -1,7 +1,7 @@
-package com.ex.microservices.lab.apigateway.service;
+package com.ex.microservices.test.apigateway.service;
 
-import com.ex.microservices.lab.apigateway.config.CarDataSource;
-import com.ex.microservices.lab.apigateway.dto.CarDataDTO;
+import com.ex.microservices.test.apigateway.config.CarDataSource;
+import com.ex.microservices.test.apigateway.dto.CarDataDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.messaging.handler.annotation.SendTo;

@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.apigateway;
+package com.ex.microservices.test.apigateway;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

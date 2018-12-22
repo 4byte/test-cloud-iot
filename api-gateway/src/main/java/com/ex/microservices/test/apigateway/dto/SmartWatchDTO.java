@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.apigateway.dto;
+package com.ex.microservices.test.apigateway.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
