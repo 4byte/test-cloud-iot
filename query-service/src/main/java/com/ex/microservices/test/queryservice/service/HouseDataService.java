@@ -1,6 +1,5 @@
 package com.ex.microservices.test.queryservice.service;
 
-import com.ex.microservices.test.queryservice.entity.CarData;
 import com.ex.microservices.test.queryservice.entity.HouseData;
 import com.ex.microservices.test.queryservice.repository.HouseDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
