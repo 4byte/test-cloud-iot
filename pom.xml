@@ -15,7 +15,7 @@
                 <module>dashboard-hystrix</module>
                 <module>discovery-service</module>
                 <module>data-generator-service</module>
-                <module>statistics-service</module>
+                <module>query-service</module>
             </modules>
         </profile>
     </profiles>

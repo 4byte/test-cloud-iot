@@ -1,12 +1,12 @@
-package com.ex.microservices.lab.statistics.statisticsservice;
+package com.ex.microservices.lab.statistics.queryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StatisticsServiceApplication {
+public class QueryServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(StatisticsServiceApplication.class, args);
+		SpringApplication.run(QueryServiceApplication.class, args);
 	}
 }
