@@ -21,7 +21,7 @@ public class HouseDataController {
 	@Autowired
 	HouseDataQueueService houseDataQueueService;
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity insertHouse(@RequestBody HouseDataDTO houseDataDTO){
 		houseDataQueueService.publishHouse(houseDataDTO);

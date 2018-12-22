@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/watch")
 public class WatchDataController {
+
 	@Autowired
 	WatchDataQueueService watchDataQueueService;
 
-	@RequestMapping(value = "", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity insertWatch(@RequestBody SmartWatchDTO smartWatchDTO){
 		watchDataQueueService.publishHouse(smartWatchDTO);
