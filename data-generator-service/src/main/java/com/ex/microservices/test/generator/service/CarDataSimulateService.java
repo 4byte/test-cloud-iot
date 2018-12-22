@@ -21,7 +21,7 @@ public class CarDataSimulateService {
 					random.nextDouble(),
 					random.nextDouble(),
 					random.nextDouble(),
-					Math.abs(((long) random.nextInt(100000000)) * 100),
+					System.currentTimeMillis(),
 					UUID.randomUUID().toString()
 			));
 			try {

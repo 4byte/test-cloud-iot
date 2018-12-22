@@ -20,7 +20,7 @@ public class WatchDataSimulateService {
 			template.postForLocation(URI.create("http://localhost:8083/watch"), new SmartWatchDTO(
 					random.nextDouble() * 200,
 					random.nextDouble(),
-					Math.abs(((long) random.nextInt(100000000)) * 100),
+					System.currentTimeMillis(),
 					UUID.randomUUID().toString()
 			));
 			try {

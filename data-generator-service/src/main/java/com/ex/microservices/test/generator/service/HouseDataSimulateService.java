@@ -22,7 +22,7 @@ public class HouseDataSimulateService {
 					random.nextDouble() * 100,
 					random.nextDouble() * 100,
 					random.nextDouble() * 10,
-					Math.abs(((long) random.nextInt(100000000)) * 100),
+					System.currentTimeMillis(),
 					UUID.randomUUID().toString()
 			));
 			try {
