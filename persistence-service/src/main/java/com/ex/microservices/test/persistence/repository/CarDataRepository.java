@@ -1,6 +1,6 @@
-package com.ex.microservices.lab.persistence.repository;
+package com.ex.microservices.test.persistence.repository;
 
-import com.ex.microservices.lab.persistence.entity.CarData;
+import com.ex.microservices.test.persistence.entity.CarData;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

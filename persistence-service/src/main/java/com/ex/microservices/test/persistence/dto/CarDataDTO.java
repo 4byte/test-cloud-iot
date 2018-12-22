@@ -1,6 +1,6 @@
-package com.ex.microservices.lab.persistence.dto;
+package com.ex.microservices.test.persistence.dto;
 
-import com.ex.microservices.lab.persistence.entity.CarData;
+import com.ex.microservices.test.persistence.entity.CarData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 

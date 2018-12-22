@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.statistics.queryservice;
+package com.ex.microservices.test.queryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

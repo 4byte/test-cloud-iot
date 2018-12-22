@@ -1,9 +1,9 @@
-package com.ex.microservices.lab.persistence.service;
+package com.ex.microservices.test.persistence.service;
 
-import com.ex.microservices.lab.persistence.config.SmartWatchProcessor;
-import com.ex.microservices.lab.persistence.dto.SmartWatchDTO;
-import com.ex.microservices.lab.persistence.entity.SmartWatch;
-import com.ex.microservices.lab.persistence.repository.SmartWatchRepository;
+import com.ex.microservices.test.persistence.config.SmartWatchProcessor;
+import com.ex.microservices.test.persistence.dto.SmartWatchDTO;
+import com.ex.microservices.test.persistence.entity.SmartWatch;
+import com.ex.microservices.test.persistence.repository.SmartWatchRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

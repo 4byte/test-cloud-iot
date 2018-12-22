@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.persistence.entity;
+package com.ex.microservices.test.persistence.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

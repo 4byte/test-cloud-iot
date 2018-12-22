@@ -1,9 +1,9 @@
-package com.ex.microservices.lab.persistence.service;
+package com.ex.microservices.test.persistence.service;
 
-import com.ex.microservices.lab.persistence.config.CarDataProcessor;
-import com.ex.microservices.lab.persistence.dto.CarDataDTO;
-import com.ex.microservices.lab.persistence.entity.CarData;
-import com.ex.microservices.lab.persistence.repository.CarDataRepository;
+import com.ex.microservices.test.persistence.config.CarDataProcessor;
+import com.ex.microservices.test.persistence.dto.CarDataDTO;
+import com.ex.microservices.test.persistence.entity.CarData;
+import com.ex.microservices.test.persistence.repository.CarDataRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

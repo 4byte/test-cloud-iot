@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.persistence.config;
+package com.ex.microservices.test.persistence.config;
 
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.Input;

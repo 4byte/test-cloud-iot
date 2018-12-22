@@ -1,9 +1,9 @@
-package com.ex.microservices.lab.persistence.service;
+package com.ex.microservices.test.persistence.service;
 
-import com.ex.microservices.lab.persistence.config.HouseDataProcessor;
-import com.ex.microservices.lab.persistence.dto.HouseDataDTO;
-import com.ex.microservices.lab.persistence.entity.HouseData;
-import com.ex.microservices.lab.persistence.repository.HouseDataRepository;
+import com.ex.microservices.test.persistence.config.HouseDataProcessor;
+import com.ex.microservices.test.persistence.dto.HouseDataDTO;
+import com.ex.microservices.test.persistence.entity.HouseData;
+import com.ex.microservices.test.persistence.repository.HouseDataRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

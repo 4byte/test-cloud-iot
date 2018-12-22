@@ -1,4 +1,4 @@
-package com.ex.microservices.lab.persistence;
+package com.ex.microservices.test.persistence;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
