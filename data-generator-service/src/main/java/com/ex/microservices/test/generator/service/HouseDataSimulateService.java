@@ -28,7 +28,7 @@ public class HouseDataSimulateService implements ApplicationListener<ContextRefr
 					random.nextDouble() * 100,
 					random.nextDouble() * 100,
 					random.nextDouble() * 10,
-					random.nextLong() * 10000,
+					Math.abs((long) random.nextInt(1000) * 100000),
 					UUID.randomUUID().toString()
 			));
 			try {

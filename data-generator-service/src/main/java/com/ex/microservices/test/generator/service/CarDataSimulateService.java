@@ -27,7 +27,7 @@ public class CarDataSimulateService implements ApplicationListener<ContextRefres
 					random.nextDouble(),
 					random.nextDouble(),
 					random.nextDouble(),
-					random.nextLong()*10000,
+					Math.abs((long) random.nextInt(1000) * 100000),
 					UUID.randomUUID().toString()
 					));
 			try {

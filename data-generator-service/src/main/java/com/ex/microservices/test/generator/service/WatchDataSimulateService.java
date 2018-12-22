@@ -26,7 +26,7 @@ public class WatchDataSimulateService implements ApplicationListener<ContextRefr
 			template.postForLocation(URI.create("http://localhost:8083/watch"), new SmartWatchDTO(
 					random.nextDouble() * 200,
 					random.nextDouble(),
-					random.nextLong() * 10000,
+					Math.abs((long) random.nextInt(1000) * 100000),
 					UUID.randomUUID().toString()
 			));
 			try {
