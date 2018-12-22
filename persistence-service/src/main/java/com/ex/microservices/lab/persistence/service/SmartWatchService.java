@@ -10,18 +10,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @EnableBinding(SmartWatchProcessor.class)
-public class SmartWatchService{
-
+public class SmartWatchService {
 	@Autowired
 	private SmartWatchRepository smartWatchRepository;
 
-//	@Override
-//	public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-//		sink.input().subscribe(message -> smartWatchRepository.save(((SmartWatchDTO) message.getPayload()).toSmartWatch()));
-//	}
-
 	@StreamListener(SmartWatchProcessor.SMART_WATCH)
-	public void listen(SmartWatchDTO smartWatchDTO){
+	public void listen(SmartWatchDTO smartWatchDTO) {
+		smartWatchRepository.save(smartWatchDTO.toSmartWatch());
 		System.out.println(smartWatchDTO);
 	}
 }
