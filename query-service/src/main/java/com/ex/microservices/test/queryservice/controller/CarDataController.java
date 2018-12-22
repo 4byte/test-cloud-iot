@@ -69,11 +69,6 @@ public class CarDataController {
 	public ResponseEntity<CarDataDTO> getMinRpmFromDate(Long date) {
 		return new ResponseEntity<>(carDataService.getMinRpmFromDate(date).toDTO(),HttpStatus.OK);
 	}
-	@RequestMapping(value = "/min/rpmFromDay", method = RequestMethod.POST)
-	@ResponseBody
-	public ResponseEntity<CarDataDTO> getMaxRpm(Long date) {
-		return new ResponseEntity<>(carDataService.getMinRpmFromDate(date).toDTO(),HttpStatus.OK);
-	}
 	@RequestMapping(value = "/average/rpmFromDay", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Double> getAverageRpmFromDate(Long date) {
