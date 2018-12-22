@@ -24,12 +24,11 @@ public class CarDataService {
 
 	@StreamListener(CarDataProcessor.CAR_DATA)
 	public void listen(CarDataDTO carDataDTO) {
-		boolean duplicateFound;
-		duplicateFound = carDataRepository.getAllByDate(carDataDTO.getDate()).orElse(new ArrayList<>())
+		boolean duplicateFound = carDataRepository.getAllByDate(carDataDTO.getDate()).orElse(new ArrayList<>())
 				.stream()
 				.map(CarData::getDate)
 				.anyMatch(carDataDTO.getDate()::equals);
-		if (duplicateFound) carDataRepository.save(carDataDTO.toCarData());
+		if (!duplicateFound) carDataRepository.save(carDataDTO.toCarData());
 		else logger.warn("Duplicate by time found");
 	}
 }
