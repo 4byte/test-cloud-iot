@@ -1,8 +1,8 @@
 package com.ex.microservices.lab.apigateway.controller;
 
-import com.ex.microservices.lab.apigateway.config.CarDataSource;
-import com.ex.microservices.lab.apigateway.dto.CarDataDTO;
-import com.ex.microservices.lab.apigateway.service.CarDataQueueService;
+import com.ex.microservices.lab.apigateway.config.HouseDataSource;
+import com.ex.microservices.lab.apigateway.dto.HouseDataDTO;
+import com.ex.microservices.lab.apigateway.service.HouseDataQueueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -11,21 +11,20 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
-
-@EnableBinding(CarDataSource.class)
+@EnableBinding(HouseDataSource.class)
 @RefreshScope
 @Component
 @RestController
-@RequestMapping("/car")
-public class CarDataController {
+@RequestMapping("/house")
+public class HouseDataController {
 
 	@Autowired
-	CarDataQueueService carDataQueueService;
+	HouseDataQueueService houseDataQueueService;
 
-	@RequestMapping(value = "", method = RequestMethod.POST)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	@ResponseBody
-	public ResponseEntity insertCar(@RequestBody CarDataDTO carDataDTO) {
-		carDataQueueService.publishCar(carDataDTO);
+	public ResponseEntity insertHouse(@RequestBody HouseDataDTO houseDataDTO){
+		houseDataQueueService.publishHouse(houseDataDTO);
 		return new ResponseEntity(HttpStatus.OK);
 	}
 }

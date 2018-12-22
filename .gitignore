@@ -31,3 +31,10 @@ hs_err_pid*
 *.iml
 out
 gen
+api-gateway/target/generated-sources/
+api-gateway/target/generated-test-sources/
+api-gateway/target/surefire-reports/
+config-service/target/generated-sources/
+config-service/target/generated-test-sources/
+discovery-service/target/generated-sources/
+persistence-service/target/generated-sources/
