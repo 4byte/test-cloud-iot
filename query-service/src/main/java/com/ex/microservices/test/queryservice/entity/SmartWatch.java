@@ -1,5 +1,7 @@
 package com.ex.microservices.test.queryservice.entity;
 
+import com.ex.microservices.test.queryservice.dto.SmartWatchDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,11 @@ public class SmartWatch {
 	public Long date;
 	@Field("user_uuid")
 	public String userUUID;
+
+	@JsonIgnore
+	public SmartWatchDTO toDTO() {
+		return new SmartWatchDTO(heartRate, chargeLeft, date, userUUID);
+	}
 
 	@Override
 	public boolean equals(Object o) {

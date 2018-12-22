@@ -1,5 +1,7 @@
 package com.ex.microservices.test.queryservice.entity;
 
+import com.ex.microservices.test.queryservice.dto.HouseDataDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,6 +29,11 @@ public class HouseData {
 	public Long date;
 	@Field("user_uuid")
 	public String userUUID;
+
+	@JsonIgnore
+	public HouseDataDTO toDTO() {
+		return new HouseDataDTO(thermostatTemp, mainRoomTemp, bedroomTemp, fridgeTemp, date, userUUID);
+	}
 
 	@Override
 	public boolean equals(Object o) {

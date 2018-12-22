@@ -2,10 +2,14 @@ package com.ex.microservices.test.queryservice.dto;
 
 import com.ex.microservices.test.queryservice.entity.SmartWatch;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class SmartWatchDTO {
 	private Double heartRate;

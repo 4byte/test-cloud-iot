@@ -1,5 +1,7 @@
 package com.ex.microservices.test.queryservice.entity;
 
+import com.ex.microservices.test.queryservice.dto.CarDataDTO;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,11 @@ public class CarData {
 	public Long date;
 	@Field("user_uuid")
 	public String userUUID;
+
+	@JsonIgnore
+	public CarDataDTO toDTO() {
+		return new CarDataDTO(rpm, speed, fuelLeft, date, userUUID);
+	}
 
 	@Override
 	public boolean equals(Object o) {
